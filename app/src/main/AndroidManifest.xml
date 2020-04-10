@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.lenovo.camerademo">
+
+    <!--在AndroidManifest中申请和声明相机，APP在安装时就告知Android需要用到相机-->
+    <!--uses-permission是APP申请相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--uses-feature则可以防止APP被安装到没有相机的Android设备上（目前仅Google Play支持）-->
+    <uses-feature android:name="android.hardware.camera" />
+
+    <!--授予程序可以向SD卡中保存文件的权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 申请录音权限-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--声明需要GPS权限-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--添加 android:screenOrientation则是设置APP的方向水平-->
+        <activity android:name=".MainActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ShowPhotoVideo"/>
+        <activity android:name=".PictureStylization"/>
+    </application>
+</manifest>
+
+<!--android:hardwareAccelerated="true"
+android:hardwareAccelerated="true"
+
+-->
